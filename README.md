@@ -2,7 +2,7 @@
 
 Copy Deep Designate 是项目深度克隆工具，用于从源项目工程进行深度复制，并自动为新克隆的项目分配新的项目代号和权限设置。
 
-> "Copy"：复制源项目或工程。"Deep"：进行深度复制，包括所有相关的文件和目录结构。"Designate"：指定或赋予新的项目代号或权限。
+"Copy"：复制源项目或工程。"Deep"：进行深度复制，包括所有相关的文件和目录结构。"Designate"：指定或赋予新的项目代号或权限。
 
 
 ## 功能特性
@@ -19,6 +19,6 @@ Copy Deep Designate 是项目深度克隆工具，用于从源项目工程进行
 ## 使用示例
 
 ```shell
-cpdd -d 'targetChars:sourceChars,targetChars:sourceChars' -o outputPath  <项目路径>
+cpdd -d '<targetChars>:<sourceChars>,<targetChars>:<sourceChars>' -o <outputPath>  <sourcePath>
 ```
 * `-h --help`：查看帮助命令
