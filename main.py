@@ -6,11 +6,13 @@ def detect_encoding(file_path):
         result = chardet.detect(f.read())
     return result['encoding']
 
-def rename_and_replace_in_file(source_directory, target_directory, old_char, new_char):
+def rename_and_replace_in_file(source_directory, target_directory, char_map):
     for root, dirs, files in os.walk(source_directory):
         for file in files:
             old_file_path = os.path.join(root, file)
-            new_file_name = old_file_path.replace(old_char, new_char)
+            new_file_name = old_file_path
+            for old_char, new_char in char_map.items():
+                new_file_name = new_file_name.replace(old_char, new_char)
             new_file_path = os.path.join(target_directory, new_file_name)
 
             # 创建目标目录（如果不存在）
@@ -27,17 +29,18 @@ def rename_and_replace_in_file(source_directory, target_directory, old_char, new
                 continue
 
             # 修改文件内容
-            new_file_data = file_data.replace(old_char, new_char)
+            new_file_data = file_data
+            for old_char, new_char in char_map.items():
+                new_file_data = new_file_data.replace(old_char, new_char)
 
             # 将修改后的内容写入新文件
             with open(new_file_path, 'w', encoding='utf-8') as f:
                 f.write(new_file_data)
 
-
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # 使用函数
-    rename_and_replace_in_file(r'D:\tmp\greatbay-framework', r'D:\tmp\gonline-framework', 'greatbay',
-                               'gonline')
+    char_map = {'greatbay': 'gonline', 'Greatbay': 'Gonline'}
+    rename_and_replace_in_file(r'D:\tmp\greatbay-framework', r'D:\tmp\gonline-framework', char_map)
 
 
