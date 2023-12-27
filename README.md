@@ -21,4 +21,9 @@ Copy Deep Designate 是项目深度克隆工具，用于从源项目工程进行
 ```shell
 cpdd -d '<targetChars>:<sourceChars>,<targetChars>:<sourceChars>' -o <outputPath>  <sourcePath>
 ```
+**相关命令**
+
 * `-h --help`：查看帮助命令
+* `-o`：新项目输出路径
+* `-d`：替换字符KV形式
+
