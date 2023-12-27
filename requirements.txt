@@ -1,0 +1,3 @@
+# requirements.txt
+argparse
+chardet~=5.2.0
