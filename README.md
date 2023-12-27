@@ -14,10 +14,35 @@ Copy Deep Designate 是项目深度克隆工具，用于从源项目工程进行
 
 ## 安装
 
-//TODO
+**使用`pip`安装**
 
+```shell
+pip install cpdd
+```
+
+或者从源代码安装
+
+克隆本仓库：
+```shell
+git clone https://github.com/edisonlil/cpdd.git
+```
+进入项目目录：
+```shell
+cd cpdd
+```
+**安装依赖：**
+
+```shell
+pip install -r requirements.txt
+```
+**安装工具：**
+
+```
+python setup.py install
+```
 ## 使用示例
 
+基本用法
 ```shell
 cpdd -d '<targetChars>:<sourceChars>,<targetChars>:<sourceChars>' -o <outputPath>  <sourcePath>
 ```
